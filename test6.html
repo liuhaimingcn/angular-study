@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body ng-app>
+        <div ng-controller="peopleCotroller">
+            <ul>
+                <li ng-repeat="people in peoples">
+                    {{'姓名：' + people.name + ', 年龄：' + people.age}}
+                </li>
+            </ul>
+        </div>
+        
+        <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+        
+        <script type="text/javascript">
+            function peopleCotroller($scope) {
+                $scope.peoples=[{name:'hai1',age:22},{name:'hai2',age:22},{name:'hai3',age:22},{name:'hai4',age:22},{name:'hai5',age:22}]
+            }
+        </script>
+    </body>
+</html>

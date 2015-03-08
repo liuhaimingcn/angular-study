@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body ng-app>
+        <div ng-controller="nameController">
+            <ul>
+                <li ng-repeat="name in names">
+                    姓名：{{name.name | uppercase}}
+                </li>
+                <hr>
+                <li ng-repeat="name in names">
+                    姓名：{{name.name | lowercase}}
+                </li>
+                <hr>
+                <li>
+                    姓名：{{23.111111 + 100.99999 | currency}}
+                </li>
+                <hr>
+                名字：<input type="text" ng-model="aaa" />
+                <li ng-repeat="name in names | filter:aaa | orderBy:'name'">
+                    姓名：{{name.name}}
+                </li>
+            </ul>
+        </div>
+
+        <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+        <script src="controller/nameController.js"></script>
+    </body>
+</html>

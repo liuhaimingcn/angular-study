@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div ng-app ng-controller="peopleContrller">
+            <p>姓名：{{person.name}}</p>
+            <p>年龄：{{person.age}}</p>
+            <p>信息：{{fullName()}}</p>
+        </div>
+        
+        <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            function peopleContrller ($scope) {
+                $scope.person = {
+                    name: 'haiyue',
+                    age: 25,
+                    info:function() {
+                        return this.name + ' ' + this.age;
+                    }
+                }
+
+                $scope.fullName = function() {
+                    var x = $scope.person;
+                    var name = x.name;
+                    var age = x.age;
+                    return name + "=" + age;
+                }
+            }
+        </script>
+    </body>
+</html>
